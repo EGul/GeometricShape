@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		767F89B01B963E2D0013FBB6 /* GeometricShape.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 767F89AF1B963E2D0013FBB6 /* GeometricShape.h */; };
+		767F89B21B963E2D0013FBB6 /* GeometricShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 767F89B11B963E2D0013FBB6 /* GeometricShape.m */; };
+		767F89B81B963E2D0013FBB6 /* libGeometricShape.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 767F89AC1B963E2D0013FBB6 /* libGeometricShape.a */; };
+		767F89C81B9644730013FBB6 /* GeometricShapeCube.m in Sources */ = {isa = PBXBuildFile; fileRef = 767F89C71B9644730013FBB6 /* GeometricShapeCube.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		767F89B91B963E2D0013FBB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 767F89A41B963E2D0013FBB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 767F89AB1B963E2D0013FBB6;
+			remoteInfo = GeometricShape;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		767F89AA1B963E2D0013FBB6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				767F89B01B963E2D0013FBB6 /* GeometricShape.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		767F89AC1B963E2D0013FBB6 /* libGeometricShape.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGeometricShape.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		767F89AF1B963E2D0013FBB6 /* GeometricShape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeometricShape.h; sourceTree = "<group>"; };
+		767F89B11B963E2D0013FBB6 /* GeometricShape.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeometricShape.m; sourceTree = "<group>"; };
+		767F89B71B963E2D0013FBB6 /* GeometricShapeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeometricShapeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		767F89BD1B963E2D0013FBB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		767F89C61B9644730013FBB6 /* GeometricShapeCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometricShapeCube.h; sourceTree = "<group>"; };
+		767F89C71B9644730013FBB6 /* GeometricShapeCube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeometricShapeCube.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		767F89A91B963E2D0013FBB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		767F89B41B963E2D0013FBB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				767F89B81B963E2D0013FBB6 /* libGeometricShape.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		767F89A31B963E2D0013FBB6 = {
+			isa = PBXGroup;
+			children = (
+				767F89AE1B963E2D0013FBB6 /* GeometricShape */,
+				767F89BB1B963E2D0013FBB6 /* GeometricShapeTests */,
+				767F89AD1B963E2D0013FBB6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		767F89AD1B963E2D0013FBB6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				767F89AC1B963E2D0013FBB6 /* libGeometricShape.a */,
+				767F89B71B963E2D0013FBB6 /* GeometricShapeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		767F89AE1B963E2D0013FBB6 /* GeometricShape */ = {
+			isa = PBXGroup;
+			children = (
+				767F89AF1B963E2D0013FBB6 /* GeometricShape.h */,
+				767F89B11B963E2D0013FBB6 /* GeometricShape.m */,
+				767F89C61B9644730013FBB6 /* GeometricShapeCube.h */,
+				767F89C71B9644730013FBB6 /* GeometricShapeCube.m */,
+			);
+			path = GeometricShape;
+			sourceTree = "<group>";
+		};
+		767F89BB1B963E2D0013FBB6 /* GeometricShapeTests */ = {
+			isa = PBXGroup;
+			children = (
+				767F89BC1B963E2D0013FBB6 /* Supporting Files */,
+			);
+			path = GeometricShapeTests;
+			sourceTree = "<group>";
+		};
+		767F89BC1B963E2D0013FBB6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				767F89BD1B963E2D0013FBB6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		767F89AB1B963E2D0013FBB6 /* GeometricShape */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 767F89C01B963E2D0013FBB6 /* Build configuration list for PBXNativeTarget "GeometricShape" */;
+			buildPhases = (
+				767F89A81B963E2D0013FBB6 /* Sources */,
+				767F89A91B963E2D0013FBB6 /* Frameworks */,
+				767F89AA1B963E2D0013FBB6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GeometricShape;
+			productName = GeometricShape;
+			productReference = 767F89AC1B963E2D0013FBB6 /* libGeometricShape.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		767F89B61B963E2D0013FBB6 /* GeometricShapeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 767F89C31B963E2D0013FBB6 /* Build configuration list for PBXNativeTarget "GeometricShapeTests" */;
+			buildPhases = (
+				767F89B31B963E2D0013FBB6 /* Sources */,
+				767F89B41B963E2D0013FBB6 /* Frameworks */,
+				767F89B51B963E2D0013FBB6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				767F89BA1B963E2D0013FBB6 /* PBXTargetDependency */,
+			);
+			name = GeometricShapeTests;
+			productName = GeometricShapeTests;
+			productReference = 767F89B71B963E2D0013FBB6 /* GeometricShapeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		767F89A41B963E2D0013FBB6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = none;
+				TargetAttributes = {
+					767F89AB1B963E2D0013FBB6 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					767F89B61B963E2D0013FBB6 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 767F89A71B963E2D0013FBB6 /* Build configuration list for PBXProject "GeometricShape" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 767F89A31B963E2D0013FBB6;
+			productRefGroup = 767F89AD1B963E2D0013FBB6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				767F89AB1B963E2D0013FBB6 /* GeometricShape */,
+				767F89B61B963E2D0013FBB6 /* GeometricShapeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		767F89B51B963E2D0013FBB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		767F89A81B963E2D0013FBB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				767F89C81B9644730013FBB6 /* GeometricShapeCube.m in Sources */,
+				767F89B21B963E2D0013FBB6 /* GeometricShape.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		767F89B31B963E2D0013FBB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		767F89BA1B963E2D0013FBB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 767F89AB1B963E2D0013FBB6 /* GeometricShape */;
+			targetProxy = 767F89B91B963E2D0013FBB6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		767F89BE1B963E2D0013FBB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		767F89BF1B963E2D0013FBB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		767F89C11B963E2D0013FBB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		767F89C21B963E2D0013FBB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		767F89C41B963E2D0013FBB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GeometricShapeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		767F89C51B963E2D0013FBB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GeometricShapeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		767F89A71B963E2D0013FBB6 /* Build configuration list for PBXProject "GeometricShape" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				767F89BE1B963E2D0013FBB6 /* Debug */,
+				767F89BF1B963E2D0013FBB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		767F89C01B963E2D0013FBB6 /* Build configuration list for PBXNativeTarget "GeometricShape" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				767F89C11B963E2D0013FBB6 /* Debug */,
+				767F89C21B963E2D0013FBB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		767F89C31B963E2D0013FBB6 /* Build configuration list for PBXNativeTarget "GeometricShapeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				767F89C41B963E2D0013FBB6 /* Debug */,
+				767F89C51B963E2D0013FBB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 767F89A41B963E2D0013FBB6 /* Project object */;
+}
