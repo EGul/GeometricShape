@@ -9,11 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface GeometricShapeCube : UIView {
-    
-    float _size;
-    
+        
+    float rotateX;
+    float rotateY;
+        
 }
 
--(void)setSize:(float)size;
+-(void)setup;
+-(void)generate;
+-(void)setColor:(UIColor *)color;
+-(void)setRotate:(float)x andY:(float)y;
 
 @end

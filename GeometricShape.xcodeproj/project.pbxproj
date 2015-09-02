@@ -44,6 +44,8 @@
 		767F89BD1B963E2D0013FBB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		767F89C61B9644730013FBB6 /* GeometricShapeCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometricShapeCube.h; sourceTree = "<group>"; };
 		767F89C71B9644730013FBB6 /* GeometricShapeCube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeometricShapeCube.m; sourceTree = "<group>"; };
+		76C15F0D1B9662EA00D2D4D1 /* Vertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vertex.glsl; sourceTree = "<group>"; };
+		76C15F0E1B9662FE00D2D4D1 /* Fragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fragment.glsl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,8 @@
 				767F89B11B963E2D0013FBB6 /* GeometricShape.m */,
 				767F89C61B9644730013FBB6 /* GeometricShapeCube.h */,
 				767F89C71B9644730013FBB6 /* GeometricShapeCube.m */,
+				76C15F0D1B9662EA00D2D4D1 /* Vertex.glsl */,
+				76C15F0E1B9662FE00D2D4D1 /* Fragment.glsl */,
 			);
 			path = GeometricShape;
 			sourceTree = "<group>";
@@ -368,6 +372,7 @@
 				767F89C21B963E2D0013FBB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		767F89C31B963E2D0013FBB6 /* Build configuration list for PBXNativeTarget "GeometricShapeTests" */ = {
 			isa = XCConfigurationList;
@@ -376,6 +381,7 @@
 				767F89C51B963E2D0013FBB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
