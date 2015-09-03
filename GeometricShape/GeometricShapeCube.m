@@ -2,7 +2,7 @@
 //  GeometricShapeCube.m
 //  GeometricShape
 //
-//  Created by sarah on 9/1/15.
+//  Created by Evan on 9/1/15.
 //  Copyright (c) 2015 none. All rights reserved.
 //
 
@@ -27,6 +27,8 @@
     
     GLuint _normal;
     GLuint _normalTransformation;
+    
+    GLuint _ambientLightColor;
     
     GLuint _diffuseLightDirection;
     GLuint _diffuseLightColor;
@@ -161,6 +163,10 @@ const GLubyte Indices[] = {
     rotateY = y;
 }
 
+-(void)addAmbientLightWithColor:(UIColor *)color {
+    ambientLightColor = color;
+}
+
 -(void)addDiffuseLightWithVectorX:(float)x y:(float)y z:(float)z color:(UIColor *)color {
     diffuseLightVector = @[@(x), @(y), @(z)];
     diffuseLightColor = color;
@@ -237,6 +243,8 @@ const GLubyte Indices[] = {
     _normal = glGetAttribLocation(programHandle, "normal");
     _normalTransformation = glGetUniformLocation(programHandle, "normalTransformation");
     glEnableVertexAttribArray(_normal);
+    
+    _ambientLightColor = glGetUniformLocation(programHandle, "ambientLightColor");
     
     _diffuseLightDirection = glGetUniformLocation(programHandle, "diffuseLightDirection");
     _diffuseLightColor = glGetUniformLocation(programHandle, "diffuseLightColor");
@@ -329,6 +337,19 @@ const GLubyte Indices[] = {
     GLKMatrix4 normalRotationY = GLKMatrix4MakeRotation(GLKMathDegreesToRadians(rotateY), 1, 0, 0);
     GLKMatrix4 normalFinal = GLKMatrix4Multiply(normalRotationX, normalRotationY);
     glUniformMatrix4fv(_normalTransformation, 1, 0, normalFinal.m);
+    
+    if (ambientLightColor != nil) {
+        
+        CGFloat red = 0;
+        CGFloat green = 0;
+        CGFloat blue = 0;
+        CGFloat alpha = 0;
+        
+        [ambientLightColor getRed:&red green:&green blue:&blue alpha:&alpha];
+        
+        glUniform4f(_ambientLightColor, red, green, blue, alpha);
+        
+    }
 
     if (diffuseLightVector != nil) {
         
