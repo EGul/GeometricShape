@@ -13,11 +13,17 @@
     float rotateX;
     float rotateY;
         
+    NSArray *diffuseLightVector;
+    UIColor *diffuseLightColor;
+    
+    UIColor *ambientLightColor;
+    
 }
 
 -(void)setup;
 -(void)generate;
 -(void)setColor:(UIColor *)color;
 -(void)setRotate:(float)x andY:(float)y;
+-(void)addDiffuseLightWithVectorX:(float)x y:(float)y z:(float)z color:(UIColor *)color;
 
 @end

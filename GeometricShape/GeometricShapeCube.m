@@ -25,6 +25,12 @@
     
     GLuint _depthRenderBuffer;
     
+    GLuint _normal;
+    GLuint _normalTransformation;
+    
+    GLuint _diffuseLightDirection;
+    GLuint _diffuseLightColor;
+    
 }
 
 -(void)setupLayer;
@@ -54,39 +60,40 @@
 typedef struct {
     float Poisition[3];
     float Color[4];
+    float Normal[4];
 } Vertex;
 
 Vertex Vertices[] = {
     
-    {{1, 1, 1}, {1, 0, 0, 1}},
-    {{1, -1, 1}, {0, 1, 0, 1}},
-    {{-1, -1, 1}, {0, 0, 1, 1}},
-    {{-1, 1, 1}, {0, 0, 0, 1}},
+    {{1, 1, 1}, {1, 1, 1, 1}, {0, 0, 1, 0}},
+    {{1, -1, 1}, {1, 1, 1, 1}, {0, 0, 1, 0}},
+    {{-1, -1, 1}, {1, 1, 1, 1}, {0, 0, 1, 0}},
+    {{-1, 1, 1}, {1, 1, 1, 1}, {0, 0, 1, 0}},
     
-    {{1, 1, -1}, {1, 0, 0, 1}},
-    {{1, -1, -1}, {0, 1, 0, 1}},
-    {{-1, -1, -1}, {0, 0, 1, 1}},
-    {{-1, 1, -1}, {0, 0, 0, 1}},
+    {{1, 1, -1}, {1, 1, 1, 1}, {0, 0, -1, 0}},
+    {{1, -1, -1}, {1, 1, 1, 1}, {0, 0, -1, 0}},
+    {{-1, -1, -1}, {1, 1, 1, 1}, {0, 0, -1, 0}},
+    {{-1, 1, -1}, {1, 1, 1, 1}, {0, 0, -1, 0}},
     
-    {{-1, 1, -1}, {1, 0, 0, 1}},
-    {{1, 1, -1}, {0, 1, 0, 1}},
-    {{1, 1, 1}, {0, 0, 1, 1}},
-    {{-1, 1, 1}, {0, 0, 0, 1}},
+    {{-1, 1, -1}, {1, 1, 1, 1}, {0, 1, 0, 0}},
+    {{1, 1, -1}, {1, 1, 1, 1}, {0, 1, 0, 0}},
+    {{1, 1, 1}, {1, 1, 1, 1}, {0, 1, 0, 0}},
+    {{-1, 1, 1}, {1, 1, 1, 1}, {0, 1, 0, 0}},
     
-    {{-1, -1, -1}, {1, 0, 0, 1}},
-    {{1, -1, -1}, {0, 1, 0, 1}},
-    {{1, -1, 1}, {0, 0, 1, 1}},
-    {{-1, -1, 1}, {0, 0, 0, 1}},
+    {{-1, -1, -1}, {1, 1, 1, 1}, {0, -1, 0, 0}},
+    {{1, -1, -1}, {1, 1, 1, 1}, {0, -1, 0, 0}},
+    {{1, -1, 1}, {1, 1, 1, 1}, {0, -1, 0, 0}},
+    {{-1, -1, 1}, {1, 1, 1, 1}, {0, -1, 0, 0}},
     
-    {{-1, 1, -1}, {1, 0, 0, 1}},
-    {{-1, 1, 1}, {0, 1, 0, 1}},
-    {{-1, -1, 1}, {0, 0, 1, 1}},
-    {{-1, -1, -1}, {0, 0, 0, 1}},
+    {{-1, 1, -1}, {1, 1, 1, 1}, {-1, 0, 0, 0}},
+    {{-1, 1, 1}, {1, 1, 1, 1}, {-1, 0, 0, 0}},
+    {{-1, -1, 1}, {1, 1, 1, 1}, {-1, 0, 0, 0}},
+    {{-1, -1, -1}, {1, 1, 1, 1}, {-1, 0, 0, 0}},
     
-    {{1, 1, -1}, {1, 0, 0, 1}},
-    {{1, 1, 1}, {0, 1, 0, 1}},
-    {{1, -1, 1}, {0, 0, 1, 1}},
-    {{1, -1, -1}, {0, 0, 0, 1}}
+    {{1, 1, -1}, {1, 1, 1, 1}, {1, 0, 0, 0}},
+    {{1, 1, 1}, {1, 1, 1, 1}, {1, 0, 0, 0}},
+    {{1, -1, 1}, {1, 1, 1, 1}, {1, 0, 0, 0}},
+    {{1, -1, -1}, {1, 1, 1, 1}, {1, 0, 0, 0}}
     
 };
 
@@ -152,6 +159,11 @@ const GLubyte Indices[] = {
 -(void)setRotate:(float)x andY:(float)y {
     rotateX = x;
     rotateY = y;
+}
+
+-(void)addDiffuseLightWithVectorX:(float)x y:(float)y z:(float)z color:(UIColor *)color {
+    diffuseLightVector = @[@(x), @(y), @(z)];
+    diffuseLightColor = color;
 }
 
 +(Class)layerClass {
@@ -221,6 +233,13 @@ const GLubyte Indices[] = {
     
     _projectionUniform = glGetUniformLocation(programHandle, "Projection");
     _transformationUniform = glGetUniformLocation(programHandle, "Transformation");
+    
+    _normal = glGetAttribLocation(programHandle, "normal");
+    _normalTransformation = glGetUniformLocation(programHandle, "normalTransformation");
+    glEnableVertexAttribArray(_normal);
+    
+    _diffuseLightDirection = glGetUniformLocation(programHandle, "diffuseLightDirection");
+    _diffuseLightColor = glGetUniformLocation(programHandle, "diffuseLightColor");
     
 }
 
@@ -304,6 +323,30 @@ const GLubyte Indices[] = {
     
     glVertexAttribPointer(_positionSlot, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
     glVertexAttribPointer(_colorSlot, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid *)(sizeof(float) * 3));
+    
+    glVertexAttribPointer(_normal, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid *)(sizeof(float) * 7));
+    GLKMatrix4 normalRotationX = GLKMatrix4MakeRotation(GLKMathDegreesToRadians(rotateX), 0, 1, 0);
+    GLKMatrix4 normalRotationY = GLKMatrix4MakeRotation(GLKMathDegreesToRadians(rotateY), 1, 0, 0);
+    GLKMatrix4 normalFinal = GLKMatrix4Multiply(normalRotationX, normalRotationY);
+    glUniformMatrix4fv(_normalTransformation, 1, 0, normalFinal.m);
+
+    if (diffuseLightVector != nil) {
+        
+        float xDirection = [[diffuseLightVector objectAtIndex:0]floatValue];
+        float yDirection = [[diffuseLightVector objectAtIndex:1]floatValue];;
+        float zDirection = [[diffuseLightVector objectAtIndex:2]floatValue];;
+        
+        CGFloat red = 0;
+        CGFloat green = 0;
+        CGFloat blue = 0;
+        CGFloat alpha = 0;
+        
+        [diffuseLightColor getRed:&red green:&green blue:&blue alpha:&alpha];
+        
+        glUniform3f(_diffuseLightDirection, xDirection, yDirection, zDirection);
+        glUniform4f(_diffuseLightColor, red, green, blue, alpha);
+        
+    }
     
     glDrawElements(GL_TRIANGLES, sizeof(Indices)/sizeof(Indices[0]), GL_UNSIGNED_BYTE, 0);
     
