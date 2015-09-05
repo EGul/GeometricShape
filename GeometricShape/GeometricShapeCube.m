@@ -167,9 +167,8 @@ const GLubyte Indices[] = {
     ambientLightColor = color;
 }
 
--(void)addDiffuseLightWithVectorX:(float)x y:(float)y z:(float)z color:(UIColor *)color {
-    diffuseLightVector = @[@(x), @(y), @(z)];
-    diffuseLightColor = color;
+-(void)addDiffuseLight:(GeometricShapeDiffuseLight *)toDiffuseLight {
+    diffuseLight = toDiffuseLight;
 }
 
 +(Class)layerClass {
@@ -350,22 +349,11 @@ const GLubyte Indices[] = {
         glUniform4f(_ambientLightColor, red, green, blue, alpha);
         
     }
-
-    if (diffuseLightVector != nil) {
+    
+    if (diffuseLight != nil) {
         
-        float xDirection = [[diffuseLightVector objectAtIndex:0]floatValue];
-        float yDirection = [[diffuseLightVector objectAtIndex:1]floatValue];;
-        float zDirection = [[diffuseLightVector objectAtIndex:2]floatValue];;
-        
-        CGFloat red = 0;
-        CGFloat green = 0;
-        CGFloat blue = 0;
-        CGFloat alpha = 0;
-        
-        [diffuseLightColor getRed:&red green:&green blue:&blue alpha:&alpha];
-        
-        glUniform3f(_diffuseLightDirection, xDirection, yDirection, zDirection);
-        glUniform4f(_diffuseLightColor, red, green, blue, alpha);
+        glUniform3f(_diffuseLightDirection, diffuseLight.vector.x, diffuseLight.vector.y, diffuseLight.vector.z);
+        glUniform4f(_diffuseLightColor, diffuseLight.color.red, diffuseLight.color.green, diffuseLight.color.blue, diffuseLight.color.alpha);
         
     }
     
