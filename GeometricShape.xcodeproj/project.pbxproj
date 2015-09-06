@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		761804321B9C028B00BED62C /* GeometricShapeAmbientLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 761804311B9C028B00BED62C /* GeometricShapeAmbientLight.m */; };
 		767F89B01B963E2D0013FBB6 /* GeometricShape.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 767F89AF1B963E2D0013FBB6 /* GeometricShape.h */; };
 		767F89B21B963E2D0013FBB6 /* GeometricShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 767F89B11B963E2D0013FBB6 /* GeometricShape.m */; };
 		767F89B81B963E2D0013FBB6 /* libGeometricShape.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 767F89AC1B963E2D0013FBB6 /* libGeometricShape.a */; };
@@ -38,6 +39,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		761804301B9C028B00BED62C /* GeometricShapeAmbientLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometricShapeAmbientLight.h; sourceTree = "<group>"; };
+		761804311B9C028B00BED62C /* GeometricShapeAmbientLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeometricShapeAmbientLight.m; sourceTree = "<group>"; };
 		767F89AC1B963E2D0013FBB6 /* libGeometricShape.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGeometricShape.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		767F89AF1B963E2D0013FBB6 /* GeometricShape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeometricShape.h; sourceTree = "<group>"; };
 		767F89B11B963E2D0013FBB6 /* GeometricShape.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeometricShape.m; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 				767F89C71B9644730013FBB6 /* GeometricShapeCube.m */,
 				769B35E21B9B7A01009FF0E6 /* GeometricShapeDiffuseLight.h */,
 				769B35E31B9B7A01009FF0E6 /* GeometricShapeDiffuseLight.m */,
+				761804301B9C028B00BED62C /* GeometricShapeAmbientLight.h */,
+				761804311B9C028B00BED62C /* GeometricShapeAmbientLight.m */,
 				76C15F0D1B9662EA00D2D4D1 /* Vertex.glsl */,
 				76C15F0E1B9662FE00D2D4D1 /* Fragment.glsl */,
 			);
@@ -210,6 +215,7 @@
 				767F89C81B9644730013FBB6 /* GeometricShapeCube.m in Sources */,
 				767F89B21B963E2D0013FBB6 /* GeometricShape.m in Sources */,
 				769B35E41B9B7A01009FF0E6 /* GeometricShapeDiffuseLight.m in Sources */,
+				761804321B9C028B00BED62C /* GeometricShapeAmbientLight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

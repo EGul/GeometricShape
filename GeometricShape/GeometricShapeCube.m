@@ -163,8 +163,8 @@ const GLubyte Indices[] = {
     rotateY = y;
 }
 
--(void)addAmbientLightWithColor:(UIColor *)color {
-    ambientLightColor = color;
+-(void)addAmbientLight:(GeometricShapeAmbientLight *)toAmbientLight {
+    ambientLight = toAmbientLight;
 }
 
 -(void)addDiffuseLight:(GeometricShapeDiffuseLight *)toDiffuseLight {
@@ -337,24 +337,13 @@ const GLubyte Indices[] = {
     GLKMatrix4 normalFinal = GLKMatrix4Multiply(normalRotationX, normalRotationY);
     glUniformMatrix4fv(_normalTransformation, 1, 0, normalFinal.m);
     
-    if (ambientLightColor != nil) {
-        
-        CGFloat red = 0;
-        CGFloat green = 0;
-        CGFloat blue = 0;
-        CGFloat alpha = 0;
-        
-        [ambientLightColor getRed:&red green:&green blue:&blue alpha:&alpha];
-        
-        glUniform4f(_ambientLightColor, red, green, blue, alpha);
-        
+    if (ambientLight != nil) {
+        glUniform4f(_ambientLightColor, ambientLight.color.red, ambientLight.color.green, ambientLight.color.blue, ambientLight.color.alpha);
     }
     
     if (diffuseLight != nil) {
-        
         glUniform3f(_diffuseLightDirection, diffuseLight.vector.x, diffuseLight.vector.y, diffuseLight.vector.z);
         glUniform4f(_diffuseLightColor, diffuseLight.color.red, diffuseLight.color.green, diffuseLight.color.blue, diffuseLight.color.alpha);
-        
     }
     
     glDrawElements(GL_TRIANGLES, sizeof(Indices)/sizeof(Indices[0]), GL_UNSIGNED_BYTE, 0);

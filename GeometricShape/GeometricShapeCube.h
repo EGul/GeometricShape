@@ -9,14 +9,14 @@
 #import <UIKit/UIKit.h>
 
 #import "GeometricShapeDiffuseLight.h"
+#import "GeometricShapeAmbientLight.h"
 
 @interface GeometricShapeCube : UIView {
         
     float rotateX;
     float rotateY;
     
-    UIColor *ambientLightColor;
-    
+    GeometricShapeAmbientLight *ambientLight;
     GeometricShapeDiffuseLight *diffuseLight;
     
 }
@@ -25,7 +25,7 @@
 -(void)generate;
 -(void)setColor:(UIColor *)color;
 -(void)setRotate:(float)x andY:(float)y;
--(void)addAmbientLightWithColor:(UIColor *)color;
+-(void)addAmbientLight:(GeometricShapeAmbientLight *)toAmbientLight;
 -(void)addDiffuseLight:(GeometricShapeDiffuseLight *)toDiffuseLight;
 
 @end
