@@ -4,6 +4,8 @@ Create geometric shapes
 ## Usage
 ### GeometricShapeCube
 ```objective-c
+#import "GeometricShape.h"
+
 GeometricShapeCube *cube = [[GeometricShapeCube alloc]init];
 [cube setFrame:CGRectMake(0, 0, 50, 50)];
 [cube setColor:[UIColor blueColor]];

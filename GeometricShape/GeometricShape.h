@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "GeometricShapeCube.h"
+
 @interface GeometricShape : NSObject
 
 @end
